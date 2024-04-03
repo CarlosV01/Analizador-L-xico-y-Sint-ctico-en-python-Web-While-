@@ -1,0 +1,252 @@
+Created by PLY version 3.11 (http://www.dabeaz.com/ply)
+
+Unused terminals:
+
+    AND
+    ASIGNAR
+    CORDER
+    CORIZQ
+    DISTINTO
+    DIV
+    DOSPUNTO
+    ENDL
+    FOR
+    GET
+    IGUAL
+    INCLUDE
+    INT
+    MAYORDER
+    MAYORIGUAL
+    MAYORIZQ
+    MENORIGUAL
+    MENORQUE
+    MINUSMINUS
+    MODULO
+    MULT
+    NAMESPACE
+    NOT
+    NUMERAL
+    OR
+    PLUSPLUS
+    POTENCIA
+    PUNTO
+    RESERVADA
+    RESTA
+    RETURN
+    SI
+    SINO
+    STD
+    SUMA
+    SYSTEM
+    USING
+    VOID
+
+Grammar
+
+Rule 0     S' -> expresion
+Rule 1     expresion -> WHILE PARIZQ IDENTIFICADOR MAYORQUE ENTERO PARDER LLAIZQ LLAIZQ
+Rule 2     expresion -> IDENTIFICADOR PARIZQ COMDOB IDENTIFICADOR COMDOB PARDER PUNTOCOMA PUNTOCOMA
+Rule 3     expresion -> LLADER LLADER
+
+Terminals, with rules where they appear
+
+AND                  : 
+ASIGNAR              : 
+COMDOB               : 2 2
+CORDER               : 
+CORIZQ               : 
+DISTINTO             : 
+DIV                  : 
+DOSPUNTO             : 
+ENDL                 : 
+ENTERO               : 1
+FOR                  : 
+GET                  : 
+IDENTIFICADOR        : 1 2 2
+IGUAL                : 
+INCLUDE              : 
+INT                  : 
+LLADER               : 3 3
+LLAIZQ               : 1 1
+MAYORDER             : 
+MAYORIGUAL           : 
+MAYORIZQ             : 
+MAYORQUE             : 1
+MENORIGUAL           : 
+MENORQUE             : 
+MINUSMINUS           : 
+MODULO               : 
+MULT                 : 
+NAMESPACE            : 
+NOT                  : 
+NUMERAL              : 
+OR                   : 
+PARDER               : 1 2
+PARIZQ               : 1 2
+PLUSPLUS             : 
+POTENCIA             : 
+PUNTO                : 
+PUNTOCOMA            : 2 2
+RESERVADA            : 
+RESTA                : 
+RETURN               : 
+SI                   : 
+SINO                 : 
+STD                  : 
+SUMA                 : 
+SYSTEM               : 
+USING                : 
+VOID                 : 
+WHILE                : 1
+error                : 
+
+Nonterminals, with rules where they appear
+
+expresion            : 0
+
+Parsing method: LALR
+
+state 0
+
+    (0) S' -> . expresion
+    (1) expresion -> . WHILE PARIZQ IDENTIFICADOR MAYORQUE ENTERO PARDER LLAIZQ LLAIZQ
+    (2) expresion -> . IDENTIFICADOR PARIZQ COMDOB IDENTIFICADOR COMDOB PARDER PUNTOCOMA PUNTOCOMA
+    (3) expresion -> . LLADER LLADER
+
+    WHILE           shift and go to state 2
+    IDENTIFICADOR   shift and go to state 3
+    LLADER          shift and go to state 4
+
+    expresion                      shift and go to state 1
+
+state 1
+
+    (0) S' -> expresion .
+
+
+
+state 2
+
+    (1) expresion -> WHILE . PARIZQ IDENTIFICADOR MAYORQUE ENTERO PARDER LLAIZQ LLAIZQ
+
+    PARIZQ          shift and go to state 5
+
+
+state 3
+
+    (2) expresion -> IDENTIFICADOR . PARIZQ COMDOB IDENTIFICADOR COMDOB PARDER PUNTOCOMA PUNTOCOMA
+
+    PARIZQ          shift and go to state 6
+
+
+state 4
+
+    (3) expresion -> LLADER . LLADER
+
+    LLADER          shift and go to state 7
+
+
+state 5
+
+    (1) expresion -> WHILE PARIZQ . IDENTIFICADOR MAYORQUE ENTERO PARDER LLAIZQ LLAIZQ
+
+    IDENTIFICADOR   shift and go to state 8
+
+
+state 6
+
+    (2) expresion -> IDENTIFICADOR PARIZQ . COMDOB IDENTIFICADOR COMDOB PARDER PUNTOCOMA PUNTOCOMA
+
+    COMDOB          shift and go to state 9
+
+
+state 7
+
+    (3) expresion -> LLADER LLADER .
+
+    $end            reduce using rule 3 (expresion -> LLADER LLADER .)
+
+
+state 8
+
+    (1) expresion -> WHILE PARIZQ IDENTIFICADOR . MAYORQUE ENTERO PARDER LLAIZQ LLAIZQ
+
+    MAYORQUE        shift and go to state 10
+
+
+state 9
+
+    (2) expresion -> IDENTIFICADOR PARIZQ COMDOB . IDENTIFICADOR COMDOB PARDER PUNTOCOMA PUNTOCOMA
+
+    IDENTIFICADOR   shift and go to state 11
+
+
+state 10
+
+    (1) expresion -> WHILE PARIZQ IDENTIFICADOR MAYORQUE . ENTERO PARDER LLAIZQ LLAIZQ
+
+    ENTERO          shift and go to state 12
+
+
+state 11
+
+    (2) expresion -> IDENTIFICADOR PARIZQ COMDOB IDENTIFICADOR . COMDOB PARDER PUNTOCOMA PUNTOCOMA
+
+    COMDOB          shift and go to state 13
+
+
+state 12
+
+    (1) expresion -> WHILE PARIZQ IDENTIFICADOR MAYORQUE ENTERO . PARDER LLAIZQ LLAIZQ
+
+    PARDER          shift and go to state 14
+
+
+state 13
+
+    (2) expresion -> IDENTIFICADOR PARIZQ COMDOB IDENTIFICADOR COMDOB . PARDER PUNTOCOMA PUNTOCOMA
+
+    PARDER          shift and go to state 15
+
+
+state 14
+
+    (1) expresion -> WHILE PARIZQ IDENTIFICADOR MAYORQUE ENTERO PARDER . LLAIZQ LLAIZQ
+
+    LLAIZQ          shift and go to state 16
+
+
+state 15
+
+    (2) expresion -> IDENTIFICADOR PARIZQ COMDOB IDENTIFICADOR COMDOB PARDER . PUNTOCOMA PUNTOCOMA
+
+    PUNTOCOMA       shift and go to state 17
+
+
+state 16
+
+    (1) expresion -> WHILE PARIZQ IDENTIFICADOR MAYORQUE ENTERO PARDER LLAIZQ . LLAIZQ
+
+    LLAIZQ          shift and go to state 18
+
+
+state 17
+
+    (2) expresion -> IDENTIFICADOR PARIZQ COMDOB IDENTIFICADOR COMDOB PARDER PUNTOCOMA . PUNTOCOMA
+
+    PUNTOCOMA       shift and go to state 19
+
+
+state 18
+
+    (1) expresion -> WHILE PARIZQ IDENTIFICADOR MAYORQUE ENTERO PARDER LLAIZQ LLAIZQ .
+
+    $end            reduce using rule 1 (expresion -> WHILE PARIZQ IDENTIFICADOR MAYORQUE ENTERO PARDER LLAIZQ LLAIZQ .)
+
+
+state 19
+
+    (2) expresion -> IDENTIFICADOR PARIZQ COMDOB IDENTIFICADOR COMDOB PARDER PUNTOCOMA PUNTOCOMA .
+
+    $end            reduce using rule 2 (expresion -> IDENTIFICADOR PARIZQ COMDOB IDENTIFICADOR COMDOB PARDER PUNTOCOMA PUNTOCOMA .)
+
